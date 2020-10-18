@@ -1,6 +1,7 @@
-<?php include 'lib/constants.php'; 
-include 'lib/db.php'; 
-include 'lib/form.php'; 
-include 'lib/auth.php'; 
+<?php include 'constants.php'; 
+include 'db.php'; 
+include 'form.php'; 
+include 'auth.php'; 
 // Session_start();
-include 'lib/session.php'; ?>
+include 'session.php'; 
+?>

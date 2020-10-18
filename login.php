@@ -4,18 +4,20 @@ include 'lib/includes.php' ;
 
 /**
  * TRAITEMENT DU FORMULAIRE
- */
+ **/
 if(isset($_POST['username']) && isset($_POST['password'])){
     $username = $db->quote($_POST['username']);
     $password = sha1($_POST['password']);
-    $select = $db->query("SELECT * FROM users WHERE username=$username AND password ='$password'");
-    if($select->rowCount() > 0){
-        $_SESSION['Auth'] = $select->fetch();
-        setFlash('Vous êtes maintenant connecté');
-        header('Location:' . WEBROOT . 'admin/index.php');
-        die();
-    }
+    $select = $db->query("SELECT * FROM users WHERE username=$username AND password ='$password'"
+        );
+        if($select->rowCount() > 0){
+            $_SESSION['Auth'] = $select->fetch();
+            setFlash('Vous êtes maintenant connecté');
+            header('Location:' . WEBROOT . 'admin/index.php');
+            die();
+        }
 }
+
 
 /**
  * INCLUSION DU HEADER
@@ -39,5 +41,5 @@ include 'partials/header.php';
     <button type="submit" class="btn btn-default">Se connecter</button>
 </form>
 
-<?php include 'lib/debug.php'; ?>
+ <?php include 'lib/debug.php'; ?> 
 <?php include 'partials/footer.php'; ?>

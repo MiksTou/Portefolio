@@ -1,3 +1,10 @@
 <?php
-define('WEBROOT', dirname($_SERVER['SCRIPT_NAME']) . '/');
-var_dump(WEBROOT);
+$directory = basename(dirname(dirname(__FILE__)));
+$url = explode($directory, $_SERVER['REQUEST_URI']);
+if(count($url) == 1){
+    define('WEBROOT', '/');
+}else {
+    define('WEBROOT', $url[0] . 'Portefolio/');
+}
+
+
