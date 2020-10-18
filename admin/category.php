@@ -4,6 +4,13 @@ include '../partials/admin_header.php';
 
 $select = $db->query('SELECT id, name, slug FROM categories');
 $categories = $select->fetchAll();
+
+/** 
+* SUPPRESSION
+**/
+if(isset($_GET['delete'])){
+    checkCsrf();
+}
 ?>
 
 
