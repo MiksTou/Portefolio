@@ -1,2 +1,2 @@
 # Portefolio
-Portefolio des différents projets réaliser avant et pednat ma formation de développeur web.
+Portefolio en cours de création des différents projets réalisés  avant et pendant ma formation de développeur web.
